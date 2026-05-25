@@ -13,7 +13,7 @@ export interface Course {
   subject: string;
   syllabus: string;
 }
-//denna kommer skickas som en service till courses och schedule
+//denna kommer skickas som en service till courses och schedule, vilket gör att jag slipper ladda ner filen :)
 @Injectable({ providedIn: 'root' })
 export class CoursesService {
   private url = 'https://matdah.github.io/DT208G---Programmering-i-TypeScript/Moment%205%20-%20Projekt/miun_courses.json';

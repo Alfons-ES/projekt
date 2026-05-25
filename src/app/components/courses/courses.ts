@@ -22,6 +22,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(private coursesService: CoursesService, public scheduleService: ScheduleService) { }
 
+  //när sidan laddas in 
   ngOnInit(): void {
     setTimeout(() => {
       this.coursesService.getCourses().subscribe(data => {
@@ -29,7 +30,7 @@ export class CoursesComponent implements OnInit {
         this.subjects = [...new Set(data.map(course => course.subject))].sort();
         this.applyFilters();
       });
-    }, 500);
+    }, 100);
   }
 
   applyFilters(): void {
