@@ -1,0 +1,149 @@
+h1 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  min-width: 200px;
+}
+
+.count {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  border-bottom: 2px solid darkcyan;
+}
+
+th {
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+th.sortable:hover {
+  color: darkcyan;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+  background: #f4fcff;
+}
+
+td a {
+  color: darkcyan;
+}
+
+.btn-add {
+  background: rgb(0, 139, 95);
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.btn-load {
+  background: darkcyan;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.btn-add:hover {
+  background: rgb(0, 88, 65);
+}
+
+.added-label {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+.no-results {
+  margin-top: 16px;
+  color: #888;
+}
+
+@media (max-width: 800px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    min-width: 100%;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  tr {
+    margin: 0;
+  }
+
+  td {
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
+  .btn-add {
+    width: 28px;
+    font-size: 8px;
+    padding: 4px;
+  }
+
+}

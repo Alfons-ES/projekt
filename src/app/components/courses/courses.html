@@ -1,0 +1,58 @@
+<h1>Kurser</h1>
+
+
+<div class="filters">
+  <div class="filter-group">
+    <label for="filterText">Filtrera kurser:</label>
+    <input id="filterText" type="text" [(ngModel)]="filterText" (ngModelChange)="applyFilters()"
+      placeholder="Kurskod eller kursnamn..." />
+  </div>
+  <div class="filter-group">
+    <label for="subject">Ämne:</label>
+    <select id="subject" [(ngModel)]="selectedSubject" (ngModelChange)="applyFilters()">
+      <option value="">Alla ämnen</option>
+      @for (s of subjects; track s) {
+      <option [value]="s">{{ s }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+<p class="count">Visar {{ filteredCourses().length }} kurser av totalt {{ allCourses.length }}.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th (click)="sortBy('courseCode')" class="sortable">Kod{{ sortIndicator('courseCode') }}</th>
+        <th (click)="sortBy('courseName')" class="sortable">Kursnamn{{ sortIndicator('courseName') }}</th>
+        <th (click)="sortBy('points')" class="sortable">Poäng{{ sortIndicator('points') }}</th>
+        <th (click)="sortBy('subject')" class="sortable">Ämne{{ sortIndicator('subject') }}</th>
+        <th>Kursplan</th>
+        <th>Lägg till</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (course of filteredCourses(); track course.courseCode) {
+      <tr>
+        <td>{{ course.courseCode }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.points }}hp</td>
+        <td>{{ course.subject }}</td>
+        <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
+        <td>
+          @if (scheduleService.isInSchedule(course.courseCode)) {
+          <span class="added-label">Tillagd</span>
+          } @else {
+          <button class="btn-add" (click)="addToSchedule(course)">Lägg till</button>
+          }
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+@if (filteredCourses.length === 0 && allCourses.length > 0) {
+<p class="no-results">Inga kurser matchar din sökning.</p>
+}

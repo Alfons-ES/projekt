@@ -1,0 +1,72 @@
+h1 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+}
+
+.empty {
+  color: #555;
+  margin-top: 12px;
+}
+
+.empty a {
+  color: darkcyan;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  border-bottom: 2px solid darkcyan;
+}
+
+th {
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tfoot td {
+  border-top: 2px solid darkcyan;
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: #f4fcff;
+}
+
+td a {
+  color: darkcyan;
+}
+
+.btn-remove {
+  background: rgb(185, 0, 0);
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.btn-remove:hover {
+  background: rgb(241, 0, 0);
+}
+
+.total-info {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+}

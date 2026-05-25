@@ -1,0 +1,45 @@
+<h1>Mitt ramschema</h1>
+
+@if (courses.length === 0) {
+<p class="empty">Du har inte lagt till några kurser än. Gå till <a routerLink="/kurser">Kurser</a> för att lägga till
+  kurser.</p>
+} @else {
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Kod</th>
+        <th>Kursnamn</th>
+        <th>Poäng</th>
+        <th>Ämne</th>
+        <th>Kursplan</th>
+        <th>Ta bort</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (course of courses; track course.courseCode) {
+      <tr>
+        <td>{{ course.courseCode }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.points }}</td>
+        <td>{{ course.subject }}</td>
+        <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
+        <td>
+          <button class="btn-remove" (click)="remove(course.courseCode)">Ta bort</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><strong>Totalt</strong></td>
+        <td><strong>{{ scheduleService.getTotalPoints() }}hp</strong></td>
+        <td colspan="3"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<p class="total-info">{{ courses.length }} kurs(er) valda - totalt {{ scheduleService.getTotalPoints() }} högskolepoäng.
+</p>
+}
