@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "typescript-universitetet": {
+    "projekt": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {

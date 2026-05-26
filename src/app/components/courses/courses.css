@@ -116,6 +116,7 @@ td a {
   color: #888;
 }
 
+
 @media (max-width: 800px) {
   .filters {
     flex-direction: column;
