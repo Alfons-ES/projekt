@@ -1,3 +1,6 @@
+https://projekttypescriptaes.netlify.app/
+Jag har skapat en webbplats där ena delen är miuns kurser och den andra är ett ramschema man själv kan bygga upp med kurserna. Jag satsar på grundbetygen och har inte gjort någon av de valfria funktionaliteterna.
+
 \# projekt
 
 
